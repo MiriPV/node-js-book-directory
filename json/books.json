@@ -1,0 +1,9 @@
+{
+    "books": [
+        {
+            "title": "The Hunger Games",
+            "author": "Suzanne Colins",
+            "genres": ["Adventure", "Science fiction"]
+        }
+    ]
+}
