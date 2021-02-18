@@ -1,9 +1,1 @@
-{
-    "books": [
-        {
-            "title": "The Hunger Games",
-            "author": "Suzanne Colins",
-            "genres": ["Adventure", "Science fiction"]
-        }
-    ]
-}
+[{"title":"The Hunger Games","author":"Suzanne Collins","genres":["Adventure","Science fiction"]}]
