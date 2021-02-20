@@ -2,6 +2,8 @@ const express = require('express');
 const fs = require('fs');
 var router = express.Router();
 
+router.use(express.json());
+
 router.get('/', (req, res) => {
     res.send('Homepage');
 })
@@ -19,7 +21,8 @@ router.get('/books', (req, res) => {
     });
 });
 
-router.get('/books/new', (req, res) => {
+//Add a new book using a json body (for example in postman)
+router.post('/books/new', (req, res) => {
     fs.readFile("./json/books.json", function(err, data) { 
         if (err) {
             console.log(err);
@@ -27,11 +30,7 @@ router.get('/books/new', (req, res) => {
             return
         }
         const books = JSON.parse(data); 
-        let book = {
-        title: "Catching fire",
-        author: "Suzanne Collins",
-        genres: ["Adventure", "Science fiction"] 
-        }
+        let book = req.body;
         books.push(book);
         fs.writeFile("./json/books.json", JSON.stringify(books), err => { 
             if (err) {
